@@ -1,0 +1,28 @@
+my_portfolio_index:
+  path:     /
+  controller: App\Controller\DefaultController::index
+my_portfolio_sendmail:
+  path:     /sendmail
+  controller: App\Controller\DefaultController::sendmail
+my_portfolio_about:
+  path:     /about
+  controller: App\Controller\DefaultController::about
+my_portfolio_experience:
+  path:     /experience
+  controller: App\Controller\DefaultController::experience
+my_portfolio_projects:
+  path:     /projects
+  controller: App\Controller\DefaultController::projects
+my_portfolio_technology:
+  path:     /technology
+  controller: App\Controller\DefaultController::technology
+my_portfolio_interest:
+  path:     /interest
+  controller: App\Controller\DefaultController::interest
+my_portfolio_hobby:
+  path:     /hobby
+  controller: App\Controller\DefaultController::hobby
+my_portfolio_search:
+  path:     /search
+  controller: App\Controller\DefaultController::search
+
