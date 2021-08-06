@@ -19,7 +19,10 @@ class DefaultController extends AbstractController
         return $this->render('Default/'.$request->getLocale().'/index.html.twig');
     }
 
-    #[Route('/about', name: 'about')]
+    #[Route(
+        path: '/{_locale}/about',
+        name: 'about',
+        defaults: ['_locale' => 'en'],)]
     public function about(Request $request)
     {
         return $this->render('Default/'.$request->getLocale().'/about.html.twig');
@@ -43,25 +46,37 @@ class DefaultController extends AbstractController
         return $this->redirect($this->generateUrl('index'));
     }
 
-    #[Route('/experience', name: 'experience')]
+    #[Route(
+        path: '/{_locale}/experience',
+        name: 'experience',
+        defaults: ['_locale' => 'en'],)]
     public function experience(Request $request)
     {
         return $this->render('Default/'.$request->getLocale().'/experience.html.twig');
     }
 
-    #[Route('/projects', name: 'projects')]
+    #[Route(
+        path: '/{_locale}/projects',
+        name: 'projects',
+        defaults: ['_locale' => 'en'],)]
     public function projects(Request $request)
     {
         return $this->render('Default/'.$request->getLocale().'/projects.html.twig');
     }
 
-    #[Route('/technology', name: 'technology')]
+    #[Route(
+        path: '/{_locale}/technology',
+        name: 'technology',
+        defaults: ['_locale' => 'en'],)]
     public function technology(Request $request)
     {
         return $this->render('Default/'.$request->getLocale().'/technology.html.twig');
     }
 
-    #[Route('/interest', name: 'interest')]
+    #[Route(
+        path: '/{_locale}/interest',
+        name: 'interest',
+        defaults: ['_locale' => 'en'],)]
     public function interest(Request $request)
     {
         return $this->render('Default/'.$request->getLocale().'/interest.html.twig');
