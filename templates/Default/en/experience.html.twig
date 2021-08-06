@@ -7,7 +7,7 @@
 
                 <div class="blog-post">
                     <h2 class="blog-post-title">История о том, как мне не сиделось на одном месте ровно</h2>
-                    <p class="blog-post-meta">Январь 1, 2019</p>
+                    <p class="blog-post-meta">{{ "now"|date("d.m.Y") }}</p>
 
                     <p>Никогда не угадаешь куда забросит тебя жизнь. Но мой опыт показывает, что у любого человека есть какое-то основное направление в котором он должен развиваться. И как бы он не пытался свернуть - жизнь все равно его вернет на истинный путь. Для меня это IT.</p>
                     <hr>
@@ -49,11 +49,11 @@
                     <p>За полгода успешно отладил все процессы, переделал сайт на фреймворк с CMS, перевел в облака бухгалтеров.</p>
                     <p>По личным причинам временно ушел на удаленку со значительным уменьшением оклада. Моего возвращения не ждали. Я не в обиде - теперь там действительно вполне может справляться продвинутый студент.</p>
                     <p><strong>Я опять в поиске...</strong></p>
-                    <p><strong>25 февраля 2019 года</strong></p>
+                    <p><strong>{{ "now"|date("d.m.Y") }}</strong></p>
                 </div><!-- /.blog-post -->
 
                 <nav class="blog-pagination">
-                    <a class="btn btn-outline-primary" href="{{ path('my_portfolio_index') }}">На главную</a>
+                    <a class="btn btn-outline-primary" href="{{ path('index') }}">На главную</a>
                 </nav>
 
             </div><!-- /.blog-main -->
@@ -73,14 +73,11 @@
                     <p class="mb-0"><span class="badge badge-secondary">2015 - 2016</span> Фриланс</p>
                     <p class="mb-0"><span class="badge badge-secondary">2017 - 2017</span> PHP backend-программист в компании по SEO-продвижению</p>
                     <p class="mb-0"><span class="badge badge-secondary">2017 - 2019</span> Технический директор мебельного магазина</p>
+                    <p class="mb-0"><span class="badge badge-secondary">2019 - 2020</span> Тимлид в финтех-компании</p>
+                    <p class="mb-0"><span class="badge badge-secondary">2020 - 2020</span> Подрядчик по разработке системы для call-центра</p>
                 </div>
+                {% include('widgets/' ~  app.request.locale  ~ '/gihub.html.twig') %}
 
-                <div class="p-4">
-                    <h4 class="font-italic">Другие ресурсы</h4>
-                    <ol class="list-unstyled">
-                        <li><a href="https://github.com/microbusiness">GitHub</a></li>
-                    </ol>
-                </div>
             </aside><!-- /.blog-sidebar -->
 
         </div><!-- /.row -->

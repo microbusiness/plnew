@@ -3,17 +3,26 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    public function index()
+    #[Route(
+        path: '/{_locale}',
+        name: 'index',
+        defaults: ['_locale' => 'en'],
+        locale: 'en',
+    )]
+    public function index(Request $request)
     {
-        return $this->render('Default/index.html.twig');
+        return $this->render('Default/'.$request->getLocale().'/index.html.twig');
     }
 
-    public function about()
+    #[Route('/about', name: 'about')]
+    public function about(Request $request)
     {
-        return $this->render('Default/about.html.twig');
+        return $this->render('Default/'.$request->getLocale().'/about.html.twig');
     }
 
     public function sendmail()
@@ -31,35 +40,48 @@ class DefaultController extends AbstractController
             );
         $mailer->send($message);
 
-        return $this->redirect($this->generateUrl('my_portfolio_homepage'));
+        return $this->redirect($this->generateUrl('index'));
     }
 
-    public function experience()
+    #[Route('/experience', name: 'experience')]
+    public function experience(Request $request)
     {
-        return $this->render('Default/experience.html.twig');
+        return $this->render('Default/'.$request->getLocale().'/experience.html.twig');
     }
 
-    public function projects()
+    #[Route('/projects', name: 'projects')]
+    public function projects(Request $request)
     {
-        return $this->render('Default/projects.html.twig');
+        return $this->render('Default/'.$request->getLocale().'/projects.html.twig');
     }
 
-    public function technology()
+    #[Route('/technology', name: 'technology')]
+    public function technology(Request $request)
     {
-        return $this->render('Default/technology.html.twig');
+        return $this->render('Default/'.$request->getLocale().'/technology.html.twig');
     }
 
-    public function interest()
+    #[Route('/interest', name: 'interest')]
+    public function interest(Request $request)
     {
-        return $this->render('Default/interest.html.twig');
-    }
-    public function hobby()
-    {
-        return $this->render('Default/hobby.html.twig');
+        return $this->render('Default/'.$request->getLocale().'/interest.html.twig');
     }
 
-    public function search()
+    #[Route(
+        path: '/{_locale}/hobby',
+        name: 'hobby',
+        defaults: ['_locale' => 'en'],)]
+    public function hobby(Request $request)
     {
-        return $this->render('Default/search.html.twig');
+        return $this->render('Default/'.$request->getLocale().'/hobby.html.twig');
+    }
+
+    #[Route(
+        path: '/{_locale}/search',
+        name: 'search',
+        defaults: ['_locale' => 'en'],)]
+    public function search(Request $request)
+    {
+        return $this->render('Default/'.$request->getLocale().'/search.html.twig');
     }
 }

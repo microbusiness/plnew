@@ -1,28 +1,78 @@
 <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-3 pt-1">
-            <a class="text-muted" href="{{ path('my_portfolio_index') }}">Номе</a>
-        </div>
-        <div class="col-5 text-center">
-            <a class="blog-header-logo text-dark" href="{{ path('my_portfolio_index') }}">Резюме</a>
+    <div class="row">
+        <div class="col-8">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        {% if app.request.locale == 'ru'  %}
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ path('index') }}">Главная <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('search') }}">Что ищу</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('about') }}">Обо мне</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('experience') }}">Опыт</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('projects') }}">Проекты</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('technology') }}">Технологии</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('interest') }}">Интересы</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('hobby') }}">Увлечения</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ path('index') }}">Main <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('search') }}">I'm looking for</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('about') }}">About me</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('experience') }}">Experience</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('projects') }}">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('technology') }}">Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('interest') }}">Interests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('hobby') }}">Hobbies</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
-            <a class="text-muted" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+            <a class="text-muted" href="{{ path(app.request.attributes.get('_route'),{'_locale':'ru'}) }}">
+                <img width="32px" src="/image/russia_square_icon_64.png">
+            </a>
+            <a class="text-muted" href="{{ path(app.request.attributes.get('_route'),{'_locale':'en'}) }}">
+                <img width="32px" src="/image/united_kingdom_square_icon_64.png">
             </a>
         </div>
     </div>
-</header>
 
-<div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="{{ path('my_portfolio_about') }}">Обо мне</a>
-        <a class="p-2 text-muted" href="{{ path('my_portfolio_experience') }}">Опыт</a>
-        <a class="p-2 text-muted" href="{{ path('my_portfolio_projects') }}">Проекты</a>
-        <a class="p-2 text-muted" href="{{ path('my_portfolio_technology') }}">Технологии</a>
-        <a class="p-2 text-muted" href="{{ path('my_portfolio_interest') }}">Интересы</a>
-        <a class="p-2 text-muted" href="{{ path('my_portfolio_hobby') }}">Увлечения</a>
-    </nav>
-</div>
+
+</header>
 
 

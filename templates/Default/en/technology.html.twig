@@ -7,7 +7,7 @@
 
                 <div class="blog-post">
                     <h2 class="blog-post-title">Ящик с инструментами должен быть укомплектован всем необходимым</h2>
-                    <p class="blog-post-meta">25 февраля 2019</p>
+
                     <h3 style="text-align: center;">Большими буквами</h3>
                     <h3 style="text-align: center;">(чтобы не было неоправданных ожиданий и разочарований)</h3>
                     <h3 style="text-align: center;">Я практически не умею писать без php.net, SO, symfony.com, dev.mysql.com, postgresql.org и других полезных ресурсов</h3>
@@ -41,7 +41,7 @@
                 </div><!-- /.blog-post -->
 
                 <nav class="blog-pagination">
-                    <a class="btn btn-outline-primary" href="{{ path('my_portfolio_index') }}">На главную</a>
+                    <a class="btn btn-outline-primary" href="{{ path('index') }}">На главную</a>
                 </nav>
 
             </div><!-- /.blog-main -->
@@ -69,13 +69,7 @@
                     <p class="mb-0"><span class="badge badge-secondary">HTML</span> - удовлетворительно</p>
                     <p class="mb-0"><span class="badge badge-secondary">RabbitMq</span> - удовлетворительно</p>
                 </div>
-
-                <div class="p-4">
-                    <h4 class="font-italic">Другие ресурсы</h4>
-                    <ol class="list-unstyled">
-                        <li><a href="https://github.com/microbusiness">GitHub</a></li>
-                    </ol>
-                </div>
+                {% include('widgets/' ~  app.request.locale  ~ '/gihub.html.twig') %}
             </aside><!-- /.blog-sidebar -->
 
         </div><!-- /.row -->

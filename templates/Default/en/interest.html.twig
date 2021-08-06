@@ -7,7 +7,6 @@
 
                 <div class="blog-post">
                     <h2 class="blog-post-title">Как жить если проект не потянешь в одно лицо</h2>
-                    <p class="blog-post-meta">25 февраля 2019</p>
                     <p>Здесь речь пойдет о методиках и инструментах, которые позволяют реализовывать действительно большие проекты. Не претендую на истину в последней инстанции - только проверенные лично практики, подходящие мне.</p>
                     <hr>
                     <p>Чем владею в той или иной степени:</p>
@@ -32,7 +31,7 @@
                 </div><!-- /.blog-post -->
 
                 <nav class="blog-pagination">
-                    <a class="btn btn-outline-primary" href="{{ path('my_portfolio_index') }}">На главную</a>
+                    <a class="btn btn-outline-primary" href="{{ path('index') }}">На главную</a>
                 </nav>
 
             </div><!-- /.blog-main -->
@@ -57,13 +56,7 @@
                         <span class="badge badge-secondary">Jenkins</span>
                     </p>
                 </div>
-
-                <div class="p-4">
-                    <h4 class="font-italic">Другие ресурсы</h4>
-                    <ol class="list-unstyled">
-                        <li><a href="https://github.com/microbusiness">GitHub</a></li>
-                    </ol>
-                </div>
+                {% include('widgets/' ~  app.request.locale  ~ '/gihub.html.twig') %}
             </aside><!-- /.blog-sidebar -->
 
         </div><!-- /.row -->
